@@ -2,7 +2,7 @@
 clear all
 set trace off
 
-global root = "C:\Users\wb434633\Documents\GitHub\ceq_cdi\"
+global root = "C:\Users\wb434633\Documents\GitHub\ceq_cdi"
 
 
 
@@ -40,17 +40,17 @@ global dataout_nsu "$data\Dataout\dataout_nsu"
 global dataout_temp "$data\Dataout\dataout_temp"  
 global datain_com "$datain_men\Commune"
 
-global prog "${root}/do_files/poverty_module_aggregate/Programs"
+global prog "${root}/do_files/Programs"
 
 
 ** Load programs
-include "${root}/do_files/EHCVM_civ_monprog.do"
+include "${prog}/EHCVM_civ_monprog.do"
 
 *** Creation de fichiers NSU a differents niveaux geographiques
-include "${root}/do_files/ehcvm_ci_pgm00_mars2020.do"
+include "${root}/do_files/poverty_module_aggregate/ehcvm_ci_pgm00_mars2020.do"
 
 *** Lecture des fichiers au niveau individuel
-include "${root}/do_files/ehcvm_ci_pgm01_mars2020.do"
+include "${root}/do_files/poverty_module_aggregate/ehcvm_ci_pgm01_mars2020.do"
 
 *** fichier menage/produits/mode d'acquisition
 *******Partie 1: Consommation alimentaire - Sections 7B, 7A et 9C*
@@ -58,7 +58,7 @@ include "${root}/do_files/ehcvm_ci_pgm01_mars2020.do"
 *******Partie 3: Valeur d'usage des biens durables - Section 12*
 *******Partie 4: loyer impute (propro et gratuit) - Section 11*
 *******Partie 5: Agrégat de consommation et quelques tests*
-include "${root}/do_files/ehcvm_ci_pgm02_mars2020.do"
+include "${root}/do_files/poverty_module_aggregate/ehcvm_ci_pgm02_mars2020.do"
 adasd555
 
 "${root}/ehcvm_ci_pgm02_mars2020.do"
