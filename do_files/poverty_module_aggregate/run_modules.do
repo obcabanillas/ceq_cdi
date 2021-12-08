@@ -16,11 +16,7 @@ global datain_men "C:\Users\wb434633\OneDrive - WBG\wb434633\fiscal_incidence\co
 global datain_aux "C:\Users\wb434633\OneDrive - WBG\wb434633\fiscal_incidence\cote_d_ivoire\data_raw\survey_data_2018/Auxiliaire"
 
 
-
-cap mkdir "${data}/datain_aux"
-cap mkdir "${data}/Dataout"
-cap mkdir "${data}/Programs"
-
+* Make forlders with outcomes
 loc folders = "dataout_p dataout_nsu dataout_temp" 
 foreach f of loc folders {
   cap mkdir "${data}/Dataout/`f'"
@@ -47,16 +43,14 @@ global datain_com "$datain_men\Commune"
 global prog "${root}/do_files/poverty_module_aggregate/Programs"
 
 
-
-
 ** Load programs
 include "${root}/do_files/EHCVM_civ_monprog.do"
 
 *** Creation de fichiers NSU a differents niveaux geographiques
-// include "${root}/do_files/ehcvm_ci_pgm00_mars2020.do"
+include "${root}/do_files/ehcvm_ci_pgm00_mars2020.do"
 
 *** Lecture des fichiers au niveau individuel
-// include "${root}/do_files/ehcvm_ci_pgm01_mars2020.do"
+include "${root}/do_files/ehcvm_ci_pgm01_mars2020.do"
 
 *** fichier menage/produits/mode d'acquisition
 *******Partie 1: Consommation alimentaire - Sections 7B, 7A et 9C*
