@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-**Check DropBox**
-=======
 ## Dofile that process Cote d'Ivoire survey individual modules
 
 The dofiles were shared by Franck M. Adoho on November 9 2021
@@ -157,4 +154,3 @@ Creates:
     - Loyer.dta
     - Dep_Loyer.dta
 ```
->>>>>>> Stashed changes
